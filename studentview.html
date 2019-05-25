@@ -5,13 +5,81 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <title>Panel studenta</title>
+
+    <!-- add style -->
+    <style>
+        body {
+            background-image: url("images/login-background.jpg");
+            background-size: cover;
+        }
+
+        .login {
+            margin-top: 100px;
+            border-top-radius: 20;
+        }
+
+        .login .card {
+            background: rgba(0, 0, 0, .6);
+        }
+
+        .login label {
+            font-size: 16px;
+            color: #ccc;
+        }
+
+        .login input {
+            color: white;
+        }
+    </style>
 </head>
 <body>
 
 <nav>
-    <a href="#" class="brand-logo center">Logowanie do kolokwium</a>
-    <img class="left" src="Logo.jpg" style="height: 100%;">
+    <img src="images/Logo.jpg" style="height: 100%;">
+    <a href="#" class="brand-logo center">Kolokwium</a>
+
 </nav>
+
+
+<div class="row login">
+    <div class="col s12 l4 offset-l4">
+        <div class="card">
+            <div class="card-action red white-text">
+                <h3 class="center-align">
+                    Login
+                </h3>
+            </div>
+
+            <div class="card-content">
+
+                <div class="form-field">
+                    <label for="username">Imię i Nazwisko</label>
+                    <input type="text" id="username">
+                </div>
+                <br>
+
+                <div class="form-field">
+                    <label for="index">Indeks studenta</label>
+                    <input type="text" id="index">
+                </div>
+                <br>
+
+                <div class="form-field">
+                    <label for="password">Hasło do kolokwium</label>
+                    <input type="text" id="password">
+                </div>
+                <br>
+
+                <div class="form-field right-align">
+                    <button class="btn-large red">Submit</button>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
 
 </body>
 </html>
