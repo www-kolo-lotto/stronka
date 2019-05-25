@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  <!--dla ikonek z materialize -->
-    <title>Prof zadania</title>
+    <title>Prof ustawienia</title>
 </head>
 <body>
     <body>
@@ -23,10 +23,10 @@
                     <h5 class="center">Czas 2:30h</h5>
                     <div class="divider"></div>
                 </li>
-            <li class="bold">
+            <li class="active indigo">
                 <a href="/"><i class="material-icons">settings</i>Ustawienia</a>
             </li>
-            <li class="active indigo">
+            <li class="bold">
                 <a href="/"><i class="material-icons">assignment</i>Panel zestawów zadań</a>
             </li>
             <li class="bold">
@@ -36,10 +36,30 @@
     </div>
 
     <div class="row">
-            <div class="col s10 offset-s2 indigo-text"><h3 class="header center">Panel zestawów zadań</h3>
-                <div class="divider"></div>
-                <div class="section black-text"><h5 class="center">tu bedzie miejsce na pliki</h5></div>
-            </div>    
+        <div class="col s10 offset-s2 indigo-text"><h3 class="header center">Ustawienia</h3>
+            <div class="divider"></div>
+        </div>
+        <form class="col s10 offset-s4">
+            <div class="row">
+                <div class="section">
+                    <div class="input-field col s8">
+                        <input placeholder="Podaj haslo" id="passwd" type="password" class="validate">
+                        <label for="passwd">Haslo do kolokwium</label>
+                    </div>
+                
+                    <div class="input-field col s8">
+                            <input placeholder="Podaj czas kolokwium" id="time" type="text" class="validate">
+                            <label for="time">Czas kolokwium</label>
+                    </div>
+                    <div class="input-field col s8">
+                        <button class="btn waves-effect waves-light" type="submit" name="action">Zatwierdź
+                                <i class="material-icons right">send</i>
+                        </button>
+                    </div>
+                    
+                </div>
+            </div>
+        </form>
     </div>
 </body>
 </html>
