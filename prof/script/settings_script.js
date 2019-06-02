@@ -1,7 +1,7 @@
 
 var time = "01:01";
 var started = false;
-
+document.getElementById("czas").innerHTML =  "Czas " + time + "h";
 var counting;
 
 document.getElementById("start").onclick = function(){
