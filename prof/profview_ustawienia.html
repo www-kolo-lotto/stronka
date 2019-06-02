@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  <!--dla ikonek z materialize -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <title>Prof ustawienia</title>
 </head>
 <body>
@@ -20,7 +21,7 @@
                 <div class="divider"></div>
             </li>
             <li>
-                    <h5 class="center">Czas 2:30h</h5>
+                    <h5 class="center" id="czas">Czas 2:30h</h5>
                     <div class="divider"></div>
                 </li>
             <li class="active indigo">
@@ -35,8 +36,8 @@
             <div class="divider"></div>
             <li>
                 <div class="container center">
-                    <a class="waves-effect waves-light btn green">Zacznij</a>
-                    <a class="waves-effect waves-light btn red">Zakoncz</a>
+                    <a class="waves-effect waves-light btn green" id="start">Zacznij</a>
+                    <a class="waves-effect waves-light btn red" id="stop">Zakoncz</a>
                 </div>
             </li>
         </ul>
@@ -55,11 +56,11 @@
                     </div>
                 
                     <div class="input-field col s8">
-                            <input placeholder="Podaj czas kolokwium" id="time" type="text" class="validate">
+                            <input placeholder="Podaj czas kolokwium" id="time" type="text" class="timepicker">
                             <label for="time">Czas kolokwium</label>
                     </div>
                     <div class="input-field col s8">
-                        <button class="btn waves-effect waves-light" type="submit" name="action">Zatwierdź
+                        <button class="btn waves-effect waves-light" type="button" id="zatwierdz">Zatwierdź
                                 <i class="material-icons right">send</i>
                         </button>
                     </div>
@@ -68,5 +69,7 @@
             </div>
         </form>
     </div>
+
+    <script type="text/javascript" src="script/script.js"></script>
 </body>
 </html>
