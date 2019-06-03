@@ -3,7 +3,7 @@ let password;
 
 function initialize() {
     let submit = document.getElementById("submit");
-    submit.addEventListener("click", checkFields)
+    submit.addEventListener("click", checkFields);
 }
 
 function checkFields() {
@@ -12,7 +12,7 @@ function checkFields() {
         document.location.href = 'studentview.html';
     }
     else{
-        M.Toast({html: 'NIE POPRAWNE HASLO!'})
+        M.toast({html: 'NIE POPRAWNE HASLO!'})
     }
 
 }
