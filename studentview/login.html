@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="javascriptLogin.js"></script>
     <title>Panel studenta</title>
 
     <!-- add style -->
@@ -38,7 +39,7 @@
         }
     </style>
 </head>
-<body>
+<body onload="initialize()">
 
 <nav>
     <img src="images/Logo.jpg" style="height: 100%;">
@@ -66,7 +67,7 @@
 
                 <div class="form-field">
                     <label for="index">Indeks studenta</label>
-                    <input type="text" id="index">
+                    <input type="text" id="index" >
                 </div>
                 <br>
 
@@ -77,7 +78,7 @@
                 <br>
 
                 <div class="form-field right-align">
-                    <button class="btn-large red">Wyślij</button>
+                    <button id="submit" class="btn-large red">Wyślij</button>
                 </div>
 
 
