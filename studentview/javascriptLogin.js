@@ -16,3 +16,7 @@ function checkFields() {
     }
 
 }
+
+function toast(text){
+    M.toast({html: text});
+}
