@@ -1,15 +1,30 @@
-
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  <!--dla ikonek z materialize -->
     <title>Prof lista</title>
 </head>
 
+<?php
+//session_start(); 
+$link = new mysqli("localhost", "root", "", "nowa");
+
+		/* Kontrola połaczenia */
+		if ($link->connect_errno) {
+		echo "Błąd połączenia nr: " . $link->connect_errno;
+		echo "Opis błędu: " . $link->connect_error;
+		exit();
+		}
+
+		/* Ustawienie strony kodowej */
+		$link->query('SET NAMES utf8');
+		$link->query('SET CHARACTER SET utf8');
+		$link->query("SET collation_connection = utf8_polish_ci");
+	?>
+
 <body>
-    <body>
 
     <div id="nav-mobile" class="sidenav sidenav-fixed" style="transform: translateX(0px);">
         <div class="container center">
@@ -25,7 +40,7 @@
                     <div class="divider"></div>
                 </li>
             <li class="bold">
-                <a href="profview_ustawienia.html"><i class="material-icons">settings</i>Ustawienia</a>
+                <a href="ustawienia.php"><i class="material-icons">settings</i>Ustawienia</a>
             </li>
             <li class="bold">
                 <a href="profview_zadania.html"><i class="material-icons">assignment</i>Panel zestawów zadań</a>
@@ -49,33 +64,41 @@
         </div>
         <div class="col s10 offset-s2 ">
             <div class="container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Imie</th>
-                            <th>Nazwisko</th>
-                            <th>Indeks</th>
-                        </tr>
-                    </thead>
-            
-                    <tbody>
-                        <tr>
-                            <td>Franek</td>
-                            <td>Dolas</td>
-                            <td>111222</td>
-                        </tr>
-                        <tr>
-                            <td>Ala</td>
-                            <td>Makota</td>
-                            <td>777989</td>
-                        </tr>
-                        <tr>
-                            <td>Jasio</td>
-                            <td>Potasio</td>
-                            <td>567765</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <?php
+                $result = $link->query ("SELECT count(*) AS ile FROM studenci");
+                $row=$result->fetch_assoc();
+
+                if($row['ile']==0)
+                    { echo '<b>Brak uczestników</b>';	}
+                else
+                {
+                $result = $link->query ("SELECT * FROM studenci GROUP BY id");
+                echo'<table>';
+                    echo'<thead>';
+                        echo'<tr>';
+                            echo'<th>Imie</th>';
+                            echo'<th>Nazwisko</th>';
+                            echo'<th>Indeks</th>';
+                        echo'</tr>';
+                    echo'</thead>';
+
+                    echo'<tbody>';
+                        
+                while($row = $result->fetch_assoc())
+                    {
+                        
+                        echo'<tr>';
+                            echo'<td>'.$row['imie'].'</td>';
+                            echo'<td>'.$row['nazwisko'].'</td>';
+                            echo'<td>'.$row['numer'].'</td>';
+                        echo'</tr>';
+                    
+                    }
+                    echo'</tbody>';
+                echo'</table>';
+                }
+                 $link->close();
+                ?>
             </div>    
         </div>   
     </div>
