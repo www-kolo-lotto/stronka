@@ -57,7 +57,7 @@
                 <a href="profview_zadania.html"><i class="material-icons">assignment</i>Panel zestawów zadań</a>
             </li>
             <li class="bold">
-                <a href="profview_lista.html"><i class="material-icons">person</i>Lista uczestników</a>
+                <a href="lista.php"><i class="material-icons">person</i>Lista uczestników</a>
             </li>
             <div class="divider"></div>
             <li>

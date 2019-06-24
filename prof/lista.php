@@ -40,7 +40,7 @@ $link = new mysqli("localhost", "root", "", "nowa");
                     <div class="divider"></div>
                 </li>
             <li class="bold">
-                <a href="profview_ustawienia.html"><i class="material-icons">settings</i>Ustawienia</a>
+                <a href="ustawienia.php"><i class="material-icons">settings</i>Ustawienia</a>
             </li>
             <li class="bold">
                 <a href="profview_zadania.html"><i class="material-icons">assignment</i>Panel zestawów zadań</a>
