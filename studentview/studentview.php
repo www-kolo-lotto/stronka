@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(!isset($_SESSION['index'])){
+    header('Location: ./login.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +39,7 @@
         <li>
             <div class="container center">
 
-                <a class="waves-effect waves-light btn red">Zakoncz</a>
+                <a class="waves-effect waves-light btn red" href="actions/logout.php")>Zakoncz</a>
             </div>
         </li>
     </ul>
