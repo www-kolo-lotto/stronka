@@ -40,7 +40,7 @@
 								$dbs->query("INSERT INTO studenci(imie, nazwisko, numer) VALUES('$first', '$name', '$index')");
 								$_SESSION['index'] = $index;
 								$dbs->close();
-								header("Location: ../studentview.html");	
+								header("Location: ../studentview.php");	
 
 							}
 						}
